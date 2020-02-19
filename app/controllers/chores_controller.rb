@@ -15,6 +15,8 @@ class ChoresController < ApplicationController
   # GET /chores/new
   def new
     @chore = Chore.new
+    @chore.user_id = current_user.id
+    @spid = params[:spid]
   end
 
   # GET /chores/1/edit

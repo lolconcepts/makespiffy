@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :carriers
   get 'dashboard/index'
   resources :chores
   resources :statuses
