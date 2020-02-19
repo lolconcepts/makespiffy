@@ -1,0 +1,2 @@
+class SpiffyTask < ApplicationRecord
+end

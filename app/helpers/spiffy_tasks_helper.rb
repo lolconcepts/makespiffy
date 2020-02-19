@@ -1,0 +1,2 @@
+module SpiffyTasksHelper
+end

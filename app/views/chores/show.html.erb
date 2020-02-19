@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Spiffy task:</strong>
+  <%= @chore.spiffy_task %>
+</p>
+
+<p>
+  <strong>Evidence:</strong>
+  <%= @chore.evidence %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @chore.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @chore.user %>
+</p>
+
+<%= link_to 'Edit', edit_chore_path(@chore) %> |
+<%= link_to 'Back', chores_path %>

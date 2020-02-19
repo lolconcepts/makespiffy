@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @spiffy_task.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @spiffy_task.description %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @spiffy_task.value %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @spiffy_task.active %>
+</p>
+
+<%= link_to 'Edit', edit_spiffy_task_path(@spiffy_task) %> |
+<%= link_to 'Back', spiffy_tasks_path %>

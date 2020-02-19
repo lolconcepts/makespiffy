@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  spiffy_task: one
+  evidence: MyString
+  status: one
+  user: one
+
+two:
+  spiffy_task: two
+  evidence: MyString
+  status: two
+  user: two
