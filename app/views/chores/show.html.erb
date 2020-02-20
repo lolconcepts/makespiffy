@@ -7,10 +7,10 @@
 
 <p>
   <strong>Evidence:</strong>
-  <% if !@chore.evidence? %>
+  <% if !@chore.evidence_url == "" %>
   None Submitted.
   <% end %>
-  <%= image_tag(@chore.evidence_url, :height => "250") if @chore.evidence? %>
+  <%= image_tag(@chore.evidence_url, :height => "250") if !@chore.evidence_url == "" %>
 </p>
 
 <p>
