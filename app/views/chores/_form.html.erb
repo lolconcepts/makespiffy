@@ -1,3 +1,8 @@
+<div class="h6">You are about to submit</div>
+<div class="h1"><%= @st.name %></div>
+<p>
+  <%= @st.description %>
+</p>
 <%= form_with(model: chore, local: true) do |form| %>
   <% if chore.errors.any? %>
     <div id="error_explanation">
@@ -12,23 +17,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label @spid %>
-    
-  </div>
-
-  <div class="field">
     <%= form.label :evidence %>
     <%= form.file_field :evidence %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status_id %>
-    <%= form.collection_select :status_id, Status.all, :id, :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div class="actions">

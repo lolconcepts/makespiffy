@@ -7,10 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <style type="text/css">
+      .home_video {
+         width: 100vw;
+         height: 100vh;
+         position: absolute;
+         display: flex;
+         justify-content: center;
+         object-fit: cover;
+         top: 0;
+         z-index: -2;
+      }
+    </style>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Make$piffy</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/all_users">Users</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Tasks", spiffy_tasks_url, :class => "nav-link" %>
+      </li>
+      <li>
+        <% if current_user && current_user.fullname == ""%>
+        <%= link_to 'Complete Profile', edit_registration_url(current_user), :class => "nav-link" %>
+       <% end %>
+      </li>
+      
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item avatar">
+        <a class="nav-link p-0" href="#">
+          <%= image_tag(current_user.avatar_url, :class => "rounded-circle z-depth-0", :height => "35") if current_user && current_user.avatar? %>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--/.Navbar -->
     <%= yield %>
+    <a href="https://www.facebook.com/lolconceptsri"><%= fa_stacked_icon "facebook" %></a> <a href="https://www.twitter.com/lolconceptsri"><%=fa_stacked_icon "twitter" %></a> <a href="https://www.youtube.com/channel/UCUWeoF33ig9uXlqz-PZFVXw"><%=fa_stacked_icon "youtube" %></a>
   </body>
 </html>

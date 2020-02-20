@@ -60,6 +60,9 @@ class SpiffyTasksController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def print_task
+    @st = SpiffyTask.find(params[:id])
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +72,6 @@ class SpiffyTasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def spiffy_task_params
-      params.require(:spiffy_task).permit(:name, :description, :value, :active)
+      params.require(:spiffy_task).permit(:name, :description, :value, :active, :redemptions)
     end
 end

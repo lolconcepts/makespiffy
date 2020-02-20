@@ -1,0 +1,7 @@
+<div class="h1"><%= @st.name %></div>
+<div class="h3">Value: <%= @st.value %></div>
+<div class="">
+	<% @url = "<img src=" + "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=#{new_chore_url(:id => @st.id)}" %>
+			<% @alternate_text = "#{@st.name}" %>
+			<div id="tnet-QR" class="border"><%= raw(@url) %> title=<%= @alternate_text %> /></img>
+</div>

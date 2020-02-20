@@ -1,4 +1,22 @@
 <h1>Dashboard#index</h1>
 <p>Find me in app/views/dashboard/index.html.erb</p>
-<%= fa_stacked_icon "terminal inverse", base: "square", class: "pull-right", text: "Hi!"%>
-<%=fa_stacked_icon "twitter", base: "square-o"%>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col">
+			<div class="card" style="width: 18rem;">
+	 		 	<img class="card-img-top" src="https://via.placeholder.com/150" alt="Card image cap">
+	  				<div class="card-body">
+	    				<h5 class="card-title">Your Bank</h5>
+	    				<p class="card-text">You have a value of <%= current_user.bank if current_user%>
+	    				 in your bank! Click below to request a cash-out!</p>
+	    				 <% if current_user.bank == 0 %>
+	    				 	<a href="#" class="btn btn-success disabled">Cash In</a>
+	    				 <% else %>
+	    				 	<a href="#" class="btn btn-success">Cash In</a>
+	    				 <% end %>
+	    				
+	  				</div>
+			</div>
+		</div>
+	</div>
+</div>

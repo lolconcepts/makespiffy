@@ -20,6 +20,11 @@ class User < ApplicationRecord
    	return true
    end
 
+   def makeAdmin
+    self.admin = true
+    self.save
+   end
+
    def cashOut(user, amount)
    	user = User.find(user)
    	if amount <= user.bank

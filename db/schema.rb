@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_230413) do
+ActiveRecord::Schema.define(version: 2020_02_20_150607) do
 
   create_table "carriers", force: :cascade do |t|
     t.string "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_230413) do
     t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "redemptions", default: 1
   end
 
   create_table "statuses", force: :cascade do |t|
