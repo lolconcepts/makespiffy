@@ -15,7 +15,7 @@ class User < ApplicationRecord
    end
 
    def addValue(amount)
-   	self.bank += amount
+   	self.bank += amount.to_i
    	self.save
    	return true
    end

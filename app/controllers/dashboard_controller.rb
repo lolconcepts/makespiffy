@@ -11,4 +11,10 @@ class DashboardController < ApplicationController
     flash[:notice] = "#{@user.fullname} has been granted Admin Rights."
     redirect_to all_users_url
   end
+  def approve
+    @chore = Chore.find(params[:cid])
+    @chore.payOut
+    flash[:notice] = "#{@chore.spiffy_task.name} has been approved."
+    redirect_to chores_url
+  end
 end

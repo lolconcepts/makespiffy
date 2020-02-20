@@ -5,7 +5,7 @@ class ChoresController < ApplicationController
   # GET /chores
   # GET /chores.json
   def index
-    @chores = Chore.all
+    @chores = Chore.all.where("status_id < ?", 4)
   end
 
   # GET /chores/1

@@ -2,23 +2,26 @@
 
 <p>
   <strong>Spiffy task:</strong>
-  <%= @chore.spiffy_task %>
+  <%= @chore.spiffy_task.name %>
 </p>
 
 <p>
   <strong>Evidence:</strong>
-  <%= @chore.evidence %>
+  <%= image_tag(@chore.evidence_url, :height => "250") if @chore.evidence? %>
 </p>
 
 <p>
   <strong>Status:</strong>
-  <%= @chore.status %>
+  <%= @chore.status.name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @chore.user %>
+  <%= @chore.user.fullname %>
 </p>
+<p>
 
+	<%= link_to 'Approve Chore',approve_path(:cid => @chore.id),:class => "btn btn-success" %>
+</p>
 <%= link_to 'Edit', edit_chore_path(@chore) %> |
 <%= link_to 'Back', chores_path %>

@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Chores</h1>
+<h1>Reviewable Chores</h1>
 
-<table>
+<table class="table table-sm">
   <thead>
     <tr>
       <th>Spiffy task</th>
@@ -14,20 +14,20 @@
   </thead>
 
   <tbody>
+    <% if @chores.count == 0 %>
+      Nothing to see here.
+    <% else %>
     <% @chores.each do |chore| %>
       <tr>
-        <td><%= chore.spiffy_task %></td>
-        <td><%= chore.evidence %></td>
-        <td><%= chore.status %></td>
-        <td><%= chore.user %></td>
+        <td><%= chore.spiffy_task.name %></td>
+        <td><%= image_tag(chore.evidence_url, :height => "25") if chore.evidence?%></td>
+        <td><%= chore.status.name %></td>
+        <td><%= chore.user.fullname %></td>
         <td><%= link_to 'Show', chore %></td>
         <td><%= link_to 'Edit', edit_chore_path(chore) %></td>
         <td><%= link_to 'Destroy', chore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Chore', new_chore_path %>
