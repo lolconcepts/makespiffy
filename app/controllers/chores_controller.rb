@@ -29,8 +29,7 @@ class ChoresController < ApplicationController
   # POST /chores.json
   def create
     @chore = Chore.new(chore_params)
-    @chore.status = Status.find(2)
-
+    @chore.status_id = 2
     respond_to do |format|
       if @chore.save
         format.html { redirect_to root_url, notice: 'Chore was successfully created.' }

@@ -15,7 +15,8 @@
       </ul>
     </div>
   <% end %>
-
+  <%= form.hidden_field :spiffy_task_id, :value => @spid  %>
+  <%= form.hidden_field :user_id, :value => current_user.id  %>
   <div class="field">
     <%= form.label "Submit your evidence" %>
     <%= form.file_field :evidence %>
