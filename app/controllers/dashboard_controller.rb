@@ -19,7 +19,7 @@ class DashboardController < ApplicationController
     redirect_to chores_url
   end
 
-  def rejection
+  def reject
     @chore = Chore.find(params[:cid])
     @chore.status_id = 1
     @chore.save
