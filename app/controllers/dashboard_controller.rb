@@ -18,4 +18,12 @@ class DashboardController < ApplicationController
     flash[:notice] = "#{@chore.spiffy_task.name} has been approved."
     redirect_to chores_url
   end
+
+    def rejections
+    @chore = Chore.find(params[:cid])
+    @chore.status_id = 1
+    @chore.save
+    flash[:notice] = "#{@chore.spiffy_task.name} has been rejected."
+    redirect_to chores_url
+  end
 end

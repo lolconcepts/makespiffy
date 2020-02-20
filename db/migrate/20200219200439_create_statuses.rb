@@ -9,6 +9,7 @@ class CreateStatuses < ActiveRecord::Migration[5.2]
     Status.create(:name => "Complete")
     Status.create(:name => "Verified")
     Status.create(:name => "Paid")
+    Status.create(:name => "Rejected")
   end
   def down
   	drop_table :statuses
