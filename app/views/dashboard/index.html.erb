@@ -1,5 +1,9 @@
 <h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<p>
+	<% if current_user && current_user.admin && @waiting.count > 0 %>
+		<span>You have <% link_to @waiting.count, chores_url %> chores to review.</span>
+	<% end %>
+</p>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col">
