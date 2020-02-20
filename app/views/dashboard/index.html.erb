@@ -1,6 +1,6 @@
 <h1>Dashboard#index</h1>
 <p>
-	<% if current_user && current_user.admin && @waiting.count > 0 %>
+	<% if current_user && current_user.admin && @waiting > 0 %>
 		<span>You have <% link_to @waiting.count, chores_url %> chores to review.</span>
 	<% end %>
 </p>

@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
   before_action :authenticate_user!
   def index
-    @waiting = Chore.all.where("status_id < ?",4)
+    @waiting = Chore.all.where("status_id < ?",4).count
   end
   def all_users
     @users = User.all
