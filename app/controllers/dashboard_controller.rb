@@ -2,6 +2,7 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
   def index
     @waiting = Chore.all.where("status_id < ?",4).where("status_id > ?", 1).count
+    @completed_today = Chore.all.where("status_id = ?",2).where(:user_id => current_user.id).where(:created_at => Date.today.beginning_of_day..Date.today.end_of_day)
   end
   def all_users
     @users = User.all
