@@ -40,9 +40,11 @@
       <li class="nav-item">
         <a class="nav-link" href="/all_users">Users</a>
       </li>
+      <% if current_user.admin %>
       <li class="nav-item">
         <%= link_to "Tasks", spiffy_tasks_url, :class => "nav-link" %>
       </li>
+      <% end %>
       <li>
         <% if current_user && current_user.fullname == ""%>
         <%= link_to 'Complete Profile', edit_registration_url(current_user), :class => "nav-link" %>
