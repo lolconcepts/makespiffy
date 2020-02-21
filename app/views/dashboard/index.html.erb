@@ -17,6 +17,10 @@
 	        <h2 class="title">
 	        	You have <%= link_to @waiting, chores_url %> chores waiting to be verified
 	    	</h2>
+	    <% else %>
+	    	<h2 class="title">
+	        	You're All Caught Up.
+	    	</h2>
 	    <% end %>
 	    <% if current_user && !current_user.admin %>
 	    	<h2 class="title">
