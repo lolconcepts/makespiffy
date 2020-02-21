@@ -30,7 +30,7 @@
 
 		<div class="container-fluid">
 		<div class="col">
-			<% if @completed_today %>
+			<% if current_user && !current_user.admin && @completed_today %>
 			<div class="h4">You completed these chores today</div>
 			<ul>
 				<% @completed_today.each do |c| %>
