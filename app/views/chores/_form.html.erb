@@ -3,7 +3,7 @@
 <p>
   <%= @st.description %>
 </p>
-<%= form_with(model: chore, local: true) do |form| %>
+<%= form_with(model: chore, local: true, class: "form") do |form| %>
   <% if chore.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(chore.errors.count, "error") %> prohibited this chore from being saved:</h2>
@@ -19,10 +19,10 @@
   <%= form.hidden_field :user_id, :value => current_user.id  %>
   <div class="field">
     <%= form.label "Submit your evidence" %>
-    <%= form.file_field :evidence %>
+    <%= form.file_field :evidence,class: "form-control" %>
   </div>
-
-  <div class="actions">
+  <br>
+  <div>
     <%= form.submit "Submit To Parent" %>
   </div>
 <% end %>

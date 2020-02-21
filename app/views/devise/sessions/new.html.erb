@@ -1,29 +1,66 @@
-
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<link href="../assets/css/material-kit.css?v=2.0.6" rel="stylesheet" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand text-center">
+            <h1>Capture. Verify. Reward.</h1>
+            <h3 class="title text-center">Good Behavior</h3>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  </div>
+  <div class="main main-raised">
+    <div class="container">
+      <div class="section text-center">
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),class: "form") do |f| %>
+  <div class="card-header card-header-primary text-center">
+    <h4 class="card-title">Login</h4>
+    <div class="social-line">
+      <a href="#pablo" class="btn btn-just-icon btn-link">
+        <i class="fa fa-facebook-square"></i>
+      </a>
+      <a href="#pablo" class="btn btn-just-icon btn-link">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="#pablo" class="btn btn-just-icon btn-link">
+        <i class="fa fa-google-plus"></i>
+      </a>
+    </div>
+  </div>
+  <div class="card-body">
+    
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="material-icons">mail</i>
+        </span>
+      </div>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="material-icons">lock_outline</i>
+        </span>
+      </div>
+      <%= f.password_field :password, autocomplete: "current-password",class: "form-control" %>
+    </div>
+  </div>
+  <div class="footer text-center">
+   <%= f.submit "Log in" %>
   </div>
 <% end %>
+      </div>
+    </div>
+  </div>
+<div class="container-fluid">
+    <div class="col">
+    <%= render "devise/shared/links" %>
+    </div>
+</div>
 
-<%= render "devise/shared/links" %>
-</div>
-</div>
+
+
+
