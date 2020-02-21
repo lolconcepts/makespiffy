@@ -1,52 +1,64 @@
+<link href="material-kit.css" rel="stylesheet" />
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand text-center">
+           <h1>Hi There, 
+                <%if current_user.fname %>
+                    <%= current_user.fname %>
+                <%else%>
+                 ... You haven't filled out your name, so I am embarrassed I can't greet you.
+                <%end%>
+            </h1>
+            <p>Please take a few moments to update your details so that we can keep in touch!</p>
 
-<h1>Hi There, 
-<%if current_user.fname %>
-    <%= current_user.fname %>
-<%else%>
-    ... You haven't filled out your name, so I am embarrassed I can't greet you.
-<%end%>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :multipart => true }) do |f| %>
+                <%= f.error_notification %>
 
-</h1>
-<p>Please take a few moments to update your details so that we can keep in touch!</p>
+                  <div class="form-inputs">
+                    <%= image_tag(current_user.avatar_url) if current_user.avatar? %><br>
+                    Photo<%= f.file_field :avatar %>
+                    <%= f.input :email, required: true, autofocus: true %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :multipart => true }) do |f| %>
-  <%= f.error_notification %>
+                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                    <% end %>
 
-  <div class="form-inputs">
-    <%= image_tag(current_user.avatar_url) if current_user.avatar? %><br>
-    Photo<%= f.file_field :avatar %>
-    <%= f.input :email, required: true, autofocus: true %>
+                    <%= f.input :fname ,label: 'First Name', required: true,placeholder: 'John' %>
+                    <%= f.input :lname ,label: 'Last Name', required: true,placeholder: 'Smith' %>
+                    <%= f.input :telephone ,label: 'Telephone', required: true, placeholder: '508-826-8385' %>
+                    <%= f.label :carrier %>
+                    <%= f.collection_select :carrier_id, Carrier.all, :id, :name %>
+                    <%= f.input :sms_ok, label: 'SMS Ok?' %>
+                    <%= f.input :password,
+                                hint: "leave it blank if you don't want to change it",
+                                required: false,
+                                input_html: { autocomplete: "new-password" } %>
+                    <%= f.input :password_confirmation,
+                                required: false,
+                                input_html: { autocomplete: "new-password" } %>
+                    <%= f.input :current_password,
+                                hint: "we need your current password to confirm your changes",
+                                required: true,
+                                input_html: { autocomplete: "current-password" } %>
+                  </div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+                  <div class="form-actions">
+                    <%= f.button :submit, "Update" , :class => "btn btn-primary" %>
+                  </div><!-- END FORM ACTION BUTTON -->
+            <% end %>
 
-    <%= f.input :fname ,label: 'First Name', required: true,placeholder: 'John' %>
-    <%= f.input :lname ,label: 'Last Name', required: true,placeholder: 'Smith' %>
-    <%= f.input :telephone ,label: 'Telephone', required: true, placeholder: '508-826-8385' %>
-    <%= f.label :carrier %>
-    <%= f.collection_select :carrier_id, Carrier.all, :id, :name %>
-    <%= f.input :sms_ok, label: 'SMS Ok?' %>
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-  </div>
+            <h3>Cancel my account</h3>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" , :class => "btn btn-primary" %>
-  </div><!-- END FORM ACTION BUTTON -->
-<% end %>
+            <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<h3>Cancel my account</h3>
+            <%= link_to "Back", :back %>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+</div?
+  
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
