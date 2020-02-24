@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <%= favicon_link_tag asset_path('apple-touch-icon.png'), :rel => 'icon', :type =>  'image/png' %>
+    <link href="material-kit.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -30,7 +31,7 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
            <li class="nav-item">
-                      <a href="#pablo" class="nav-link"><i class="material-icons">email</i></a>
+                      <a href="/spiffy_tasks" class="nav-link">Spiffy Tasks</a>
             </li>
              <li class="nav-item">
                       <a href="#pablo" class="nav-link"><i class="material-icons">email</i></a>
@@ -45,21 +46,6 @@
         </ul>
       </div>
     </div>
-
-    <% flash.each do |type, msg| %>
-      <div class="alert alert-success">
-        <div class="container">
-          <div class="alert-icon">
-            <button class="close" aria-label="Close" type="button" data-dismiss="alert">
-            <span aria-hidden="true"><i class="material-icons">clear</i></span>
-          </button>
-          </div>
-          
-          <b><%= type %>:</b><br>
-          <%= msg %>
-        </div>
-      </div> 
-    <% end %>
  
   </nav>
 
