@@ -1,6 +1,21 @@
-<h1>Editing Spiffy Task</h1>
+<link href="../material-kit.css" rel="stylesheet" />
 
-<%= render 'form', spiffy_task: @spiffy_task %>
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand text-center">
+          	<h1>Editing <%= @spiffy_task.name %></h1>
+            <%= render 'form', spiffy_task: @spiffy_task %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>	
+	</div>
+</div>
+
+
+
 
 <%= link_to 'Show', @spiffy_task %> |
 <%= link_to 'Back', spiffy_tasks_path %>

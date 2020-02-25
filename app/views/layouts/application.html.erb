@@ -30,12 +30,14 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
+          <% if current_user && current_user.admin %>
            <li class="nav-item">
                       <a href="/spiffy_tasks" class="nav-link">Spiffy Tasks</a>
             </li>
              <li class="nav-item">
                       <a href="#pablo" class="nav-link"><i class="material-icons">email</i></a>
             </li>
+            <% end %> 
           <li class="nav-item">
             <a href="#" class="nav-link">
               <% if current_user %>

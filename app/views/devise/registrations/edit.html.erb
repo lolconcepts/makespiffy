@@ -2,14 +2,8 @@
 <div class="container">
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
-          <div class="brand text-center">
-           <h1>Hi There, 
-                <%if current_user.fname %>
-                    <%= current_user.fname %>
-                <%else%>
-                 ... You haven't filled out your name, so I am embarrassed I can't greet you.
-                <%end%>
-            </h1>
+          <div class="brand text-center"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+           
             <p>Please take a few moments to update your details so that we can keep in touch!</p>
 
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :multipart => true }) do |f| %>
@@ -53,12 +47,11 @@
             <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
             <%= link_to "Back", :back %>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-</div>
-</div?
+         
+        </div><!-- END COL -->
+      </div><!-- END ROW -->
+    </div><!-- END CONTAINER-->
+    
+
   
 
