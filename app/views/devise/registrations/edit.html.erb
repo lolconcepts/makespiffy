@@ -40,7 +40,7 @@
                     <%= f.input :telephone ,label: 'Telephone', required: true, placeholder: '508-826-8385' %>
                     <%= f.label :carrier %>
                     <%= f.collection_select :carrier_id, Carrier.all, :id, :name %>
-                    <%= f.input :sms_ok, label: 'SMS Ok?' %>
+                    <%= f.check_box :sms_ok, label: 'SMS Ok?' %>
                     <%= f.input :password,
                                 hint: "leave it blank if you don't want to change it",
                                 required: false,
