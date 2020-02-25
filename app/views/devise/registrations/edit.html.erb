@@ -2,10 +2,27 @@
 <div class="container">
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
-          <div class="brand text-center"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-           
-            <p>Please take a few moments to update your details so that we can keep in touch!</p>
-
+          <div class="brand text-center">
+            <h1>Howdy!</h1>
+            <h3 class="title text-center">Let's get to know each other.</h3>
+          </div>
+        </div>
+      </div>
+</div>
+  </div>
+  <div class="main main-raised">
+    <div class="container">
+      <div class="section text-center"> 
+        TOGETHER. WE. WIN.
+      </div>
+      
+    </div>
+  </div>
+<div class="container-fluid">
+    <div class="col">
+      Fill out the rest of your profile. You only need to confirm your password to save the changes. If you want to change your password, you can do it by completing the change password fields below.
+    </div>
+</div>
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :multipart => true }) do |f| %>
                 <%= f.error_notification %>
 
@@ -29,6 +46,7 @@
                                 required: false,
                                 input_html: { autocomplete: "new-password" } %>
                     <%= f.input :password_confirmation,
+                                hint: "leave it blank if you don't want to change it",
                                 required: false,
                                 input_html: { autocomplete: "new-password" } %>
                     <%= f.input :current_password,
@@ -48,9 +66,7 @@
 
             <%= link_to "Back", :back %>
          
-        </div><!-- END COL -->
-      </div><!-- END ROW -->
-    </div><!-- END CONTAINER-->
+     
     
 
   
