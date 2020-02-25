@@ -1,3 +1,28 @@
+
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand text-center">
+            <h1>Chore</h1>
+            <h3 class="title text-center">Review</h3>
+          </div>
+        </div>
+      </div>
+</div>
+  </div>
+  <div class="main main-raised">
+    <div class="container">
+      <div class="section text-center"> 
+        TOGETHER. WE. WIN.
+      </div>
+      
+    </div>
+  </div>
+<div class="container-fluid">
+    <div class="col">
+      So Happy to have you with us. We promise to help you manage your household by providing a way to ENGAGE your kids, so that you can work as a team to get things clean.
+    </div>
+</div>
 <p id="notice"><%= notice %></p>
 
 <h1>Reviewable Chores</h1>
@@ -23,9 +48,7 @@
         <td><%= image_tag(chore.evidence_url, :height => "25") if chore.evidence?%></td>
         <td><%= chore.status.name %></td>
         <td><%= chore.user.fullname %></td>
-        <td><%= link_to 'Show', chore %></td>
-        <td><%= link_to 'Edit', edit_chore_path(chore) %></td>
-        <td><%= link_to 'Destroy', chore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Review', chore %></td>
       </tr>
     <% end %>
     <% end %>
