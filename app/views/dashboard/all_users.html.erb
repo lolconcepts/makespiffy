@@ -1,25 +1,36 @@
-<h1>Listing of Users</h1>
-<table class="table">
-	<thead>
-		<tr>
-			<td></td>
-			<td>Name</td>
-			<td>Email</td>
-			<td>Phone</td>
-		</tr>
-	</thead>
-<% @users.each do |user| %>
-	<tr>
-			<td>
-				<%= link_to 'Make Admin', adminify_path(:id => user.id) if !user.admin %>
-			</td>
-			<td><%= user.fullname%>
-			<% if user.admin %>
-				<span class="badge badge-primary">Administrator</span>
-			<% end %>
-			</td>
-			<td><%= user.email%> </td>
-			<td><%= user.telephone %> </td>
-		</tr>
-<% end %>
-</table>
+</div>
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand text-center">
+            <h1>Listing of Users</h1>
+          </div>
+        <div class="container-fluid">
+	    	<div class="col">
+			    <table class="table table-fluid">
+					<thead>
+						<tr>
+							<td></td>
+							<td>Name</td>
+						</tr>
+					</thead>
+						<% @users.each do |user| %>
+							<tr>
+								<td>
+									<%= link_to 'Make Admin', adminify_path(:id => user.id) if !user.admin %>
+								</td>
+								<td><%= user.fullname%>
+									<% if user.admin %>
+										<span class="badge badge-primary">Administrator</span>
+									<% else %>
+										<span class="badge badge-warning">Kid</span>
+									<% end %>
+								</td>
+							</tr>
+						<% end %>
+				</table>
+	    	</div>
+		</div>
+</div>
+
+ 
