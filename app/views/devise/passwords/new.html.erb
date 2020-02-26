@@ -1,6 +1,18 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand text-center">
+            <h1>Forgot your password?</h1>
+            <h3 class="title text-center">Reset It Here!</h3>
+          </div>
+        </div>
+      </div>
+</div>
+  </div>
+  <div class="main main-raised">
+    <div class="container">
+      <div class="section text-center"> 
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -13,4 +25,12 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
