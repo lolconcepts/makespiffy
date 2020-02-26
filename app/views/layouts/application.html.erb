@@ -38,12 +38,10 @@
                       <a href="/all_users" class="nav-link">List Users</a>
             </li>
             <% end %> 
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="nav-item nav-link">
               <% if current_user %>
-              <%= link_to "Logged in as #{current_user.fullname}", destroy_user_session_path, method: :delete, :class => "navbar-text" %> 
+              <%= link_to "Logged in as #{current_user.fullname}", destroy_user_session_path, method: :delete %> 
               <% end %>
-            </a>
           </li>
         </ul>
       </div>
