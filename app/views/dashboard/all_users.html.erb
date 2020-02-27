@@ -20,7 +20,7 @@
 									<%= link_to 'Make Admin', adminify_path(:id => user.id) if !user.admin %>
 								</td>
 								<td>
-									<% user.fullname %>
+									<%= user.fullname %>
 									
 									<% if user.admin %>
 										<span class="badge badge-primary">Administrator</span>
