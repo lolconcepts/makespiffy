@@ -20,7 +20,7 @@
 									<%= link_to 'Make Admin', adminify_path(:id => user.id) if !user.admin %>
 								</td>
 								<td>
-									<%= link_to user.fullname, admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" } %>
+									<% user.fullname %>
 									
 									<% if user.admin %>
 										<span class="badge badge-primary">Administrator</span>
