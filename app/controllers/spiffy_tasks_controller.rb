@@ -62,6 +62,7 @@ class SpiffyTasksController < ApplicationController
   end
   def print_task
     @st = SpiffyTask.find(params[:id])
+    render layout: false
   end
 
   private
