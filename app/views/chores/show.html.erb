@@ -24,7 +24,7 @@
   <% if !@chore.evidence_url == "" %>
   None Submitted.
   <% end %>
-  <%= image_tag(@chore.evidence_url, :height => "250") %>
+  <%= image_tag(@chore.evidence_url, :height => "250") if chore.evidence? %>
 </p>
 
 <p>
