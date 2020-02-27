@@ -11,7 +11,7 @@
  }
 </style>
 <div id="card">
-  <h1><%= @st.name %></h1>
+  <h2><%= @st.name %></h2>
   <h3>Value: <%= @st.value %></h3>
 
 	<% @url = "<img src=" + "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=#{new_chore_url(:id => @st.id)}" %>
