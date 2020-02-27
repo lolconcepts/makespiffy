@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cashouts
   resources :carriers
   get 'dashboard/index'
   resources :chores
@@ -11,8 +12,12 @@ Rails.application.routes.draw do
   match '/adminify',:to => 'dashboard#adminify', :via => :get
   match '/approve',:to => 'dashboard#approve', :via => :get
   match '/rejection',:to => 'dashboard#reject', :via => :get
+  
+  match '/approve_cashout',:to => 'cashouts#approve', :via => :get
+  match '/reject_cashout',:to => 'cashouts#reject', :via => :get
+
   match '/print',:to => 'spiffy_tasks#print_task', :via => :get
-  match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
+  match 'users/:id' => 'dashboard#destroy', :via => :delete, :as => :admin_destroy_user
   root to: "dashboard#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

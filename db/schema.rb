@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_20_150607) do
+ActiveRecord::Schema.define(version: 2020_02_27_171408) do
 
   create_table "carriers", force: :cascade do |t|
     t.string "name"
     t.string "suffix"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cashouts", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "amount"
+    t.boolean "paid", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cashouts_on_user_id"
   end
 
   create_table "chores", force: :cascade do |t|

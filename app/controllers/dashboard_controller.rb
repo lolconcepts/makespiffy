@@ -13,6 +13,16 @@ class DashboardController < ApplicationController
     flash[:notice] = "#{@user.fullname} has been granted Admin Rights."
     redirect_to all_users_url
   end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    if @user.destroy
+      redirect_to all_users_url, notice: "User Deleted"
+    end
+  end
+
   def approve
     @chore = Chore.find(params[:cid])
     @chore.payOut

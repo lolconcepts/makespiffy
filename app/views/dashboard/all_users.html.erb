@@ -1,4 +1,4 @@
-</div>
+
 <div class="container">
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
@@ -7,7 +7,7 @@
           </div>
         <div class="container-fluid">
 	    	<div class="col">
-			    <table class="table table-fluid">
+			    <table class="table table-sm table-dark table-bordered">
 					<thead>
 						<tr>
 							<td></td>
@@ -19,7 +19,9 @@
 								<td>
 									<%= link_to 'Make Admin', adminify_path(:id => user.id) if !user.admin %>
 								</td>
-								<td><%= user.fullname%>
+								<td>
+									<%= link_to user.fullname, admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" } %>
+									
 									<% if user.admin %>
 										<span class="badge badge-primary">Administrator</span>
 									<% else %>

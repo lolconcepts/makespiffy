@@ -1,0 +1,21 @@
+
+<%= simple_form_for(@cashout) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+  
+    <%= f.input :amount %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    
+  </div>
+
+  <div class="form-actions">
+  	<% if current_user && current_user.bank == 0 %>
+  		Sorry. You can't cash in what you dont have.
+  	<% else %>
+  		<%= f.button :submit %>
+  	<% end %>
+    
+  </div>
+<% end %>

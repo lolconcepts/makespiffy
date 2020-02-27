@@ -25,8 +25,8 @@ class User < ApplicationRecord
     self.save
    end
 
-   def cashOut(user, amount)
-   	user = User.find(user)
+   def cashOut(amount)
+   	user = self
    	if amount <= user.bank
    		user.bank = user.bank - amount
    		user.save

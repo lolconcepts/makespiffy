@@ -32,10 +32,13 @@
         <ul class="navbar-nav ml-auto">
           <% if current_user && current_user.admin %>
            <li class="nav-item">
-                      <a href="/spiffy_tasks" class="nav-link">Spiffy Tasks</a>
+                      <a href="/spiffy_tasks" class="nav-link"><span class="badge badge-pill badge-secondary"><%= task_count %></span> Spiffy Tasks</a>
             </li>
              <li class="nav-item">
-                      <a href="/all_users" class="nav-link">List Users</a>
+                      <a href="/all_users" class="nav-link"><span class="badge badge-pill badge-secondary"><%= user_count %></span> List Users</a>
+            </li>
+              <li class="nav-item">
+                      <a href="/cashouts" class="nav-link"><span class="badge badge-pill badge-secondary"><%= co_count %></span> Cashout Requests</a>
             </li>
             <% end %> 
           <li class="nav-item nav-link">

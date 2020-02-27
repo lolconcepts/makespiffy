@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @cashout.user %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @cashout.amount %>
+</p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @cashout.paid %>
+</p>
+
+<%= link_to 'Edit', edit_cashout_path(@cashout) %> |
+<%= link_to 'Back', cashouts_path %>
