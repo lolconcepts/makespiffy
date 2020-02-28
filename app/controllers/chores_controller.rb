@@ -19,6 +19,8 @@ class ChoresController < ApplicationController
     @chore.user_id = current_user.id
     @spid = params[:id]
     @st = SpiffyTask.find(@spid)
+    @chore.spiffy_task = @st
+    @eligible = @chore.eligible
   end
 
   # GET /chores/1/edit
