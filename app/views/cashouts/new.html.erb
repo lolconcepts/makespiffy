@@ -3,9 +3,13 @@
         <div class="col-md-8 ml-auto mr-auto">
           <div class="brand text-center">
           	<h1>Create New Cashout Request</h1>
-          	<h3 class="title text-center">You have <%= current_user.bank %> point available</h3>
-          	
-            <%= render 'form', cashout: @cashout %>
+          	<% if @outstanding == 0 %>
+              <h3 class="title text-center">You have <%= current_user.bank %> point available</h3>
+              <%= render 'form', cashout: @cashout %>
+            <% else %>
+              <h3 class="title text-center">Hold up, cowboy. You already have a cashout request in.</h3>
+            <% end %>
+            
           </div>
           <%= link_to 'Back', root_url %>
         </div>

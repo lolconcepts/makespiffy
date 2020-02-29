@@ -14,6 +14,7 @@ class CashoutsController < ApplicationController
 
   # GET /cashouts/new
   def new
+    @outstanding = Cashout.all.where(:paid => false).where(:user_id => current_user.id).count
     @cashout = Cashout.new
     @cashout.user_id = current_user.id
   end
