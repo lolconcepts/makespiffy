@@ -23,7 +23,7 @@ class ChoresController < ApplicationController
     @eligible = @chore.eligible
     # Duplicate Detector
     # if the same chore has been submitted for today
-    @duplicate = Chore.all.where(:user_id => current_user.id).where(:created_at => Time.zone.now.beginning_of_day..Time.zone.end_of_the_day).count
+    @duplicate = Chore.all.where(:user_id => current_user.id).where(:created_at => Time.zone.now.beginning_of_day..Time.zone.end_of_day).count
   end
 
   # GET /chores/1/edit
