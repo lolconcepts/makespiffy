@@ -70,6 +70,10 @@ class ChoresController < ApplicationController
     end
   end
 
+  def all_chores
+    @chores_today = Chore.all.where(:created_at => Date.today.all_day)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chore

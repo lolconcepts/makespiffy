@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
           <div class="brand text-center">
-            <% if @eligible && @duplicate > 1 %>
+            <% if @eligible && @duplicate > 2 %>
               <%= render 'form', chore: @chore %>
             <% else %>
               <div class="h2">All Redemptions For This SpiffyTask Have Been Made</div>

@@ -1,0 +1,5 @@
+<%= @chores_today.each do |chore| %>
+	<%= chore.user.fullname %>
+	<%= chore.spiffy_task.name %>
+	<%= chore.created_at %>
+<% end %>
