@@ -23,6 +23,9 @@ class DashboardController < ApplicationController
     end
   end
 
+  def locked
+  end
+
   def approve
     @chore = Chore.find(params[:cid])
     @chore.payOut

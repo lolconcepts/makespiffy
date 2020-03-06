@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   
   match '/approve_cashout',:to => 'cashouts#approve', :via => :get
   match '/reject_cashout',:to => 'cashouts#reject', :via => :get
+  match '/locked', :to => 'dashboard#locked', :via => :get
 
   match '/print',:to => 'spiffy_tasks#print_task', :via => :get
   match 'users/:id' => 'dashboard#destroy', :via => :delete, :as => :admin_destroy_user
