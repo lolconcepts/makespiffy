@@ -24,7 +24,7 @@
 	    <% end %>
 	    <% if current_user && !current_user.admin %>
 	    	<h2 class="title">
-	        	You have a value of <span class="h4"><%= current_user.bank if current_user %></span> in your bank! Click below to request a cash-out!</p>
+	        	You have a value of <%= current_user.bank if current_user %> in your bank! Click below to request a cash-out!</p>
 	    		<% if current_user.bank == 0 %>
 	    			<a href="#" class="btn btn-success disabled">Cash In</a>
 	    		<% else %>
