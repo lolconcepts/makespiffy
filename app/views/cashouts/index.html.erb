@@ -17,7 +17,7 @@
   <tbody>
     <% @cashouts.each do |cashout| %>
       <tr>
-        <td><%= cashout.user.fullname %></td>
+        <td><%= cashout.user.fullname %> <span class="badge badge-success"><%=cashout.user.bank %> points available</span></td>
         <td><%= cashout.amount %></td>
         <td><%= cashout.paid %></td>
         <td><%= link_to 'Approve', approve_cashout_path(:id => cashout.id) %></td>
