@@ -1,0 +1,14 @@
+</div>
+<%= simple_form_for(@bonu) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+  	Who?: <%= f.collection_select :user_id, User.all, :id, :fullname %>
+    <%= f.input :amount %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Give" %>
+  </div>
+<% end %>

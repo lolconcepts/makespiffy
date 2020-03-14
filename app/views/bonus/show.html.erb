@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @bonu.user %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @bonu.amount %>
+</p>
+
+<%= link_to 'Edit', edit_bonu_path(@bonu) %> |
+<%= link_to 'Back', bonus_path %>

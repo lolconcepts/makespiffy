@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bonus
   resources :cashouts
   resources :carriers
   get 'dashboard/index'
