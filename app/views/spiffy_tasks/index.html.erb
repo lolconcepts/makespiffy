@@ -22,7 +22,7 @@
 
         <td><%= link_to 'Pickup Task', new_chore_path(:spid => spiffy_task.id) if !current_user.admin %></td>
         <td><%= link_to 'Show', spiffy_task %></td>
-        <td><%= link_to 'Delete', spiffy_task, method: :delete, data: { confirm: 'Are you sure?' } if current_user.admin  %></td>
+        <td><%= link_to 'Delete', spiffy_task, method: :destroy, data: { confirm: 'Are you sure?' } if current_user.admin  %></td>
         <td><%= link_to 'Print', print_path(:id => spiffy_task.id) if current_user.admin %></td>
       </tr>
     <% end %>
