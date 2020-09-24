@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :chores, :dependent => :destroy
   has_many :cashouts, :dependent => :destroy
-  has_many :bonuses, :dependent => :destroy
+  has_many :bonus, :dependent => :destroy
 
    mount_uploader :avatar, AvatarUploader
 
