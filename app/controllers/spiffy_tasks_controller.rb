@@ -1,5 +1,7 @@
 class SpiffyTasksController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_spiffy_task, only: [:show, :edit, :update, :destroy]
+
 
   # GET /spiffy_tasks
   # GET /spiffy_tasks.json
