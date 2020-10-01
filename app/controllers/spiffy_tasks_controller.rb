@@ -65,6 +65,11 @@ class SpiffyTasksController < ApplicationController
     render layout: false
   end
 
+  def print_all_cards
+    @cards = SpiffyTask.all
+    render layout: false
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_spiffy_task

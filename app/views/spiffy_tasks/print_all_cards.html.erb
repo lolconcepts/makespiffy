@@ -1,0 +1,30 @@
+
+<style type="text/css">
+ #card{
+  width:1.85in;
+  height:3.25in;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+ }
+ #QR img{
+  height: 150px;
+ }
+</style>
+<% @cards.each do |c| %>
+
+<div id="card">
+  <h2><%= c.name %></h2>
+  <h3>Value: <%= c.value %></h3>
+
+	<% @url = "<img src=" + "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=#{new_chore_url(:id => c.id)}" %>
+	<% @alternate_text = "#{c.name}" %>
+	<div id="QR" class="border"><%= raw(@url) %> title=<%= @alternate_text %> /></img>
+    <h4>Make$piffy Chore Card</h4>
+  </div>
+</div>
+
+<% end %>
+     
+      <%= link_to 'back', spiffy_tasks_url %>
+  

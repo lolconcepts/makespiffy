@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :chores, :dependent => :destroy
   has_many :cashouts, :dependent => :destroy
   has_many :bonus, :dependent => :destroy
-  has_many :checkins, :dependent => :destroy
+  
 
    mount_uploader :avatar, AvatarUploader
 
