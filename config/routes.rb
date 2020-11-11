@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   match '/adminify',:to => 'dashboard#adminify', :via => :get
   match '/approve',:to => 'dashboard#approve', :via => :get
   match '/rejection',:to => 'dashboard#reject', :via => :get
+  match '/list',:to => 'dashboard#all_tasks', :via => :get
   
   match '/approve_cashout',:to => 'cashouts#approve', :via => :get
   match '/reject_cashout',:to => 'cashouts#reject', :via => :get

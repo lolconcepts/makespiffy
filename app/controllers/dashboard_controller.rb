@@ -26,6 +26,10 @@ class DashboardController < ApplicationController
   def locked
   end
 
+  def all_tasks
+    @tasks = SpiffyTask.all
+  end
+
   def approve
     @chore = Chore.find(params[:cid])
     @chore.payOut
